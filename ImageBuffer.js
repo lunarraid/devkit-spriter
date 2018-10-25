@@ -76,21 +76,3 @@ ImageBuffer.prototype.drawImage = function (imageBuffer, sx, sy, sw, sh, dx, dy,
     }
   }
 };
-
-ImageBuffer.prototype.write = function (filename) {
-  return new Promise(function (resolve) {
-      Jimp.prototype.write.call(this, filename, resolve);
-    }.bind(this));
-};
-
-ImageBuffer.prototype.getBuffer = function (mime) {
-  return new Promise(function (resolve, reject) {
-      Jimp.prototype.getBuffer.call(this, mime, function (err, res) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(res);
-        }
-      });
-    }.bind(this));
-};

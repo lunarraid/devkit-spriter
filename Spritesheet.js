@@ -89,7 +89,7 @@ Spritesheet.prototype.recycleSprites = function () {
 };
 
 Spritesheet.prototype.write = function (filename) {
-  return this.buffer.write(filename);
+  return this.buffer.writeAsync(filename);
 };
 
 Spritesheet.prototype.blit = function (img) {
